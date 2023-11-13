@@ -2,11 +2,11 @@
 
 namespace RPPP06.Models.SuradniciF;
 
-public class Ima
+public class SuradnikUloga
 {
     public int UlogaId { get; set; }
 
-    public int SuradnikOIB { get; set; }
+    public string SuradnikEmail { get; set; }
 
     public Uloga Uloga { get; set; } = null!;
 

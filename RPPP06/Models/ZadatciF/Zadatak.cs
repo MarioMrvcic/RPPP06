@@ -7,15 +7,27 @@ namespace RPPP06.Models.ZadatciF;
 public class Zadatak
 {
     [Key]
-    public int ŠifZad { get; set; }
+    public int ZadatakId { get; set; }
+
+    public string? OpisZadatka { get; set; }
+
+    [Required]
+    public DateTime PlaniraniPočetak { get; set; }
+
+    [Required]
+    public DateTime PlaniraniKraj { get; set; }
+
+    public DateTime? StvarniPočetak { get; set; }
+
+    public DateTime? StvarniKraj { get; set; }
 
     [Required]
     public Zahtjev Zahtjev { get; set; }
 
-    public Nositelj Nositelj { get; set; }
-
     [Required]
     public Status Status { get; set; }
 
-    public Suradnik Suradnik { get; set;}
+    public Suradnik? Nositelj { get; set;}
+
+    public List<Posao>? Poslovi { get; set; }
 }

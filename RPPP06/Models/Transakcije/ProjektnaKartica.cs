@@ -6,12 +6,17 @@ namespace RPPP06.Models.Transakcije;
 public class ProjektnaKartica
 {
     [Key]
-    public int Id { get; set; }
+    public int ProjektnaKarticaId { get; set; }
 
+    [Required]
     public String Banka { get; set; }
 
     [Required]
-    public Projekt Projekt { get; set; }
+    public int Iban { get; set; }
 
-    public List<Transakcija> Transakcije { get; set;}
+    [Required]
+    public double Stanje { get; set; }
+
+    [Required]
+    public Projekt Projekt { get; set; }
 }

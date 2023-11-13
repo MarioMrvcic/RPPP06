@@ -6,7 +6,10 @@ public class VrstaTransakcije
 {
 
     [Key]
-    public int Id { get; set; }
+    public int VrstaTransakcijeId { get; set; }
 
-    public List<Transakcija> Transakcije { get; set;}
+    [Required]
+    public String Ime { get; set; }
+
+    public List<Transakcija>? Transakcije { get; set;}
 }

@@ -1,6 +1,6 @@
 ﻿namespace RPPP06.Models.Dokumenti;
 
-public class DijeliSeNa
+public class DokumentacijaVrstaDokumentacije
 {
     public int DokumentacijaId { get; set; }
 

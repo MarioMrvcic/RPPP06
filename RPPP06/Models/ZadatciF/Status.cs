@@ -6,11 +6,14 @@ public class Status
 {
 
     [Key]
-    public int Id { get; set; }
+    public int StatusId { get; set; }
 
     [Required]
-    public ZastavicaAktivnosti ZastavicaAktivnosti { get; set; }
+    public string Ime { get; set; }
 
-    public List<Zadatak> Zadatci { get; set; }
+    [Required]
+    public string ZastavicaAktivnosti { get; set; }
+
+    public List<Zadatak>? Zadatci { get; set; }
 
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RPPP06.Data;
 
@@ -11,9 +12,11 @@ using RPPP06.Data;
 namespace RPPP06.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    partial class AplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231112233457_EtapaAktivnostFix")]
+    partial class EtapaAktivnostFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -144,23 +147,6 @@ namespace RPPP06.Migrations
                     b.HasKey("VrstaDokumentacijeId");
 
                     b.ToTable("VrstaDokumentacije");
-
-                    b.HasData(
-                        new
-                        {
-                            VrstaDokumentacijeId = 1,
-                            Ime = "Ponuda"
-                        },
-                        new
-                        {
-                            VrstaDokumentacijeId = 2,
-                            Ime = "Ugovor"
-                        },
-                        new
-                        {
-                            VrstaDokumentacijeId = 3,
-                            Ime = "Dokumentacija izvedenog stanja"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.Projekti.Projekt", b =>
@@ -218,28 +204,6 @@ namespace RPPP06.Migrations
                     b.HasKey("VrstaProjektaId");
 
                     b.ToTable("VrstaProjekta");
-
-                    b.HasData(
-                        new
-                        {
-                            VrstaProjektaId = 1,
-                            Ime = "Poslovni"
-                        },
-                        new
-                        {
-                            VrstaProjektaId = 2,
-                            Ime = "Znanstveni"
-                        },
-                        new
-                        {
-                            VrstaProjektaId = 3,
-                            Ime = "Nastavni"
-                        },
-                        new
-                        {
-                            VrstaProjektaId = 4,
-                            Ime = "Istraživačko-razvojni"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.SuradniciF.Posao", b =>
@@ -358,38 +322,6 @@ namespace RPPP06.Migrations
                     b.HasKey("UlogaId");
 
                     b.ToTable("Uloga");
-
-                    b.HasData(
-                        new
-                        {
-                            UlogaId = 1,
-                            Ime = "Sistem analitičar"
-                        },
-                        new
-                        {
-                            UlogaId = 2,
-                            Ime = "Programer"
-                        },
-                        new
-                        {
-                            UlogaId = 3,
-                            Ime = "Sponzor"
-                        },
-                        new
-                        {
-                            UlogaId = 4,
-                            Ime = "Tester"
-                        },
-                        new
-                        {
-                            UlogaId = 5,
-                            Ime = "Koordinator"
-                        },
-                        new
-                        {
-                            UlogaId = 6,
-                            Ime = "Analiza"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.SuradniciF.VrstaPosla", b =>
@@ -407,38 +339,6 @@ namespace RPPP06.Migrations
                     b.HasKey("VrstaPoslaId");
 
                     b.ToTable("VrstaPosla");
-
-                    b.HasData(
-                        new
-                        {
-                            VrstaPoslaId = 1,
-                            Ime = "Analiza"
-                        },
-                        new
-                        {
-                            VrstaPoslaId = 2,
-                            Ime = "Projektiranje"
-                        },
-                        new
-                        {
-                            VrstaPoslaId = 3,
-                            Ime = "Programiranje"
-                        },
-                        new
-                        {
-                            VrstaPoslaId = 4,
-                            Ime = "Testiranje"
-                        },
-                        new
-                        {
-                            VrstaPoslaId = 5,
-                            Ime = "Dokumentiranje"
-                        },
-                        new
-                        {
-                            VrstaPoslaId = 6,
-                            Ime = "Planiranje"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.Transakcije.ProjektnaKartica", b =>
@@ -521,28 +421,6 @@ namespace RPPP06.Migrations
                     b.HasKey("VrstaTransakcijeId");
 
                     b.ToTable("VrstaTransakcije");
-
-                    b.HasData(
-                        new
-                        {
-                            VrstaTransakcijeId = 1,
-                            Ime = "Uplata"
-                        },
-                        new
-                        {
-                            VrstaTransakcijeId = 2,
-                            Ime = "Isplata"
-                        },
-                        new
-                        {
-                            VrstaTransakcijeId = 3,
-                            Ime = "Honorar"
-                        },
-                        new
-                        {
-                            VrstaTransakcijeId = 4,
-                            Ime = "Prijenos"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.ZadatciF.Status", b =>
@@ -564,38 +442,6 @@ namespace RPPP06.Migrations
                     b.HasKey("StatusId");
 
                     b.ToTable("Status");
-
-                    b.HasData(
-                        new
-                        {
-                            StatusId = 1,
-                            Ime = "U toku",
-                            ZastavicaAktivnosti = "Aktivan"
-                        },
-                        new
-                        {
-                            StatusId = 2,
-                            Ime = "Nezapočet",
-                            ZastavicaAktivnosti = "Neaktivan"
-                        },
-                        new
-                        {
-                            StatusId = 3,
-                            Ime = "Odbačen",
-                            ZastavicaAktivnosti = "Neaktivan"
-                        },
-                        new
-                        {
-                            StatusId = 4,
-                            Ime = "Dovršen",
-                            ZastavicaAktivnosti = "Aktivan"
-                        },
-                        new
-                        {
-                            StatusId = 5,
-                            Ime = "Odgođen",
-                            ZastavicaAktivnosti = "Aktivan"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.ZadatciF.Zadatak", b =>
@@ -656,28 +502,6 @@ namespace RPPP06.Migrations
                     b.HasKey("AktivnostId");
 
                     b.ToTable("Aktivnost");
-
-                    b.HasData(
-                        new
-                        {
-                            AktivnostId = 1,
-                            Ime = "Sistem analiza"
-                        },
-                        new
-                        {
-                            AktivnostId = 2,
-                            Ime = "Testiranje"
-                        },
-                        new
-                        {
-                            AktivnostId = 3,
-                            Ime = "Razvoj"
-                        },
-                        new
-                        {
-                            AktivnostId = 4,
-                            Ime = "Isporuka"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.Zahtjevi.Etapa", b =>
@@ -762,28 +586,6 @@ namespace RPPP06.Migrations
                     b.HasKey("PrioritetId");
 
                     b.ToTable("Prioritet");
-
-                    b.HasData(
-                        new
-                        {
-                            PrioritetId = 1,
-                            Ime = "Mora biti"
-                        },
-                        new
-                        {
-                            PrioritetId = 2,
-                            Ime = "Može biti"
-                        },
-                        new
-                        {
-                            PrioritetId = 3,
-                            Ime = "Neće biti"
-                        },
-                        new
-                        {
-                            PrioritetId = 4,
-                            Ime = "Treba biti"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.Zahtjevi.TipZahtjeva", b =>
@@ -801,43 +603,6 @@ namespace RPPP06.Migrations
                     b.HasKey("TipZahtjevaId");
 
                     b.ToTable("TipZahtjeva");
-
-                    b.HasData(
-                        new
-                        {
-                            TipZahtjevaId = 1,
-                            Ime = "Poslovni"
-                        },
-                        new
-                        {
-                            TipZahtjevaId = 2,
-                            Ime = "Sistemski"
-                        },
-                        new
-                        {
-                            TipZahtjevaId = 3,
-                            Ime = "Korisnički"
-                        },
-                        new
-                        {
-                            TipZahtjevaId = 4,
-                            Ime = "Funkcionalni"
-                        },
-                        new
-                        {
-                            TipZahtjevaId = 5,
-                            Ime = "Nefunkcionalni"
-                        },
-                        new
-                        {
-                            TipZahtjevaId = 6,
-                            Ime = "Sigurnosni"
-                        },
-                        new
-                        {
-                            TipZahtjevaId = 7,
-                            Ime = "Kulturološki"
-                        });
                 });
 
             modelBuilder.Entity("RPPP06.Models.Zahtjevi.Zahtjev", b =>

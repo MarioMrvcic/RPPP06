@@ -5,9 +5,12 @@ namespace RPPP06.Models.SuradniciF;
 public class VrstaPosla
 {
     [Key]
-    public int Id { get; set; }
+    public int VrstaPoslaId { get; set; }
 
     [Required]
-    public List<EvidencijaRadnogVremena> EvidencijaRadnogVremena { get; set; }
+    public string Ime { get; set; }
+
+    [Required]
+    public List<Posao> Poslovi { get; set; }
 
 }

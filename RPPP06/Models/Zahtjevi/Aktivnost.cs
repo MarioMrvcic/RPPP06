@@ -2,15 +2,15 @@
 
 namespace RPPP06.Models.Zahtjevi;
 
-public class Prioritet
+public class Aktivnost
 {
 
     [Key]
-    public int PrioritetId { get; set; }
+    public int AktivnostId { get; set; }
 
     [Required]
     public string Ime { get; set; }
 
-    public List<Zahtjev>? Zahtjevi { get; set; }
+    public List<Etapa>? Etapa { get; set; }
 
 }

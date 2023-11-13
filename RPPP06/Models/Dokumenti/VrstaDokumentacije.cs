@@ -6,8 +6,11 @@ public class VrstaDokumentacije
 {
 
     [Key]
-    public int Id { get; set; }
+    public int VrstaDokumentacijeId { get; set; }
 
     [Required]
-    public List<DijeliSeNa> Dokumentacije { get; set; }
+    public string Ime { get; set; }
+
+    [Required]
+    public List<DokumentacijaVrstaDokumentacije> Dokumentacija { get; set; }
 }

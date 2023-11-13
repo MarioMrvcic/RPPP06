@@ -10,18 +10,37 @@ namespace RPPP06.Models.Projekti
     {
 
         [Key]
-        public int SifProjekt { get; set; }
-
-        public Dokumentacija Dokumentacija { get; set; }
+        public int ProjektId { get; set; }
 
         [Required]
-        public ProjektnaKartica ProjektnaKartica { get; set; }
+        public string Ime { get; set; }
+
+        public string? Kratica { get; set; }
+
+        public string? Opis { get; set; }
+
+        [Required]
+        public DateTime PlaniraniPočetak { get; set; }
+
+        [Required]
+        public DateTime PlaniraniKraj { get; set; }
+
+        public DateTime? StvarniPočetak { get; set; }
+
+        public DateTime? StvarniKraj { get; set; }
+
+        public Dokumentacija? Dokumentacija { get; set; }
+
+        [Required]
+        public List<ProjektnaKartica> ProjektneKartice { get; set; }
 
         [Required]
         public PlanProjekta PlanProjekta { get; set;}
 
         [Required]
-        public List<RadeNa> Suradnici { get; set; }
+        public List<SuradnikProjekt> Suradnici { get; set; }
 
+        [Required]
+        public VrstaProjekta VrstaProjekta { get; set; }
     }
 }
